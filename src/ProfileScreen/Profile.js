@@ -14,10 +14,16 @@ import {
   Icon,
   Title,
   Button,
-  H1
+  H1,
+  Item,
+  Label,
+  Input,
+  Thumbnail
 } from "native-base";
 
 import { StackNavigator } from "react-navigation";
+
+
 
 
 export default class Profile extends React.Component {
@@ -30,21 +36,37 @@ export default class Profile extends React.Component {
     return (
       <Container>
         <Content padder>
-          <Card>
-            <CardItem>
-              <Icon active name="paper-plane" />
-              <Text>Show User profiles here</Text>
-              <Right>
-                <Icon name="close" />
-              </Right>
-            </CardItem>
-          </Card>
+           <Thumbnail style={{ marginLeft: 135 }} large source={{uri: 'http://godofindia.com/wp-content/uploads/2017/05/rajinikanth.jpg'}}
+            />
+            <Text>Username:</Text>
+            <Item floatingLabel style={{ marginTop: 5 }}>
+          <Input
+             placeholder="John" 
+             onChangeText={(Username)=>this.setState({Username})} />
+          </Item>
+          <Text>password:</Text>
+          <Item floatingLabel style={{ marginTop: 5 }}>
+            <Input secureTextEntry={true} placeholder="XXXXXXX"
+            onChangeText={(password)=>this.setState({password})} />
+          </Item>
+          <Text>Mobile No:</Text>
+            <Item floatingLabel style={{ marginTop: 5 }}>
+          <Input
+             placeholder="936613925" 
+             onChangeText={(Username)=>this.setState({Username})} />
+          </Item>
+          <Text>Email</Text>
+          <Item floatingLabel style={{ marginTop: 5 }}>
+            <Input secureTextEntry={true} placeholder="abc@gmail.com"
+            onChangeText={(password)=>this.setState({password})} />
+          </Item>
+          
           <Button
             full
             rounded
             primary
             style={{ marginTop: 10 }}
-            onPress={() => this.props.navigation.navigate("EditScreenOne")}
+            
           >
             <Text>Update</Text>
           </Button>
