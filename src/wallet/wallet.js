@@ -29,7 +29,7 @@ export default class Wallet extends React.Component {
           <Card>
             <CardItem>
               
-              <Text>Your Wallet livi :></Text>
+              <Text>Your Wallet</Text>
               <Right>
                 <Icon name="close" />
               </Right>
